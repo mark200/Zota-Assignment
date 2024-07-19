@@ -45,9 +45,6 @@ func (c *Controller) DepositRequest(request data.ZotaOrderRequest) ([]byte, erro
 		return nil, fmt.Errorf("failed to read response body: %v", err)
 	}
 
-	fmt.Println(resp.StatusCode)
-	fmt.Println("TEST TEST TEST")
-
 	if resp.StatusCode != http.StatusOK {
 		return body, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
 	}

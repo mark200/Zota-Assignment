@@ -35,10 +35,5 @@ func generateSignature(order model.Order) string {
 	hash.Write([]byte(input))
 	hashBytes := hash.Sum(nil)
 
-	str := hex.EncodeToString(hashBytes)
-
-	fmt.Println("INSIDE THE MAPPER, SIG: ")
-	fmt.Println(str)
-
-	return str
+	return hex.EncodeToString(hashBytes)
 }
